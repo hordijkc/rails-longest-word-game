@@ -1,0 +1,18 @@
+<h1>Random word selector</h1>
+<p></p>
+
+<tr>
+<% @letters.each do |letter| %>
+  <th> <%= letter %> </th>
+  <% end %>
+</tr>
+
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+  <input type="text" name="name" placeholder="Type longest word">
+  <input type="submit">
+</form>
+
+
